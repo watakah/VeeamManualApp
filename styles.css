@@ -14,6 +14,13 @@ body {
   padding: 20px;
 }
 
+/* Contenedor principal centrado */
+.container {
+  max-width: 80%; /* 80% del ancho de la página */
+  margin: 0 auto; /* Centrado horizontal */
+  padding: 20px;
+}
+
 /* Encabezado */
 header {
   background-color: #00bfff; /* Azul eléctrico */
@@ -48,7 +55,7 @@ main {
   background-color: #1e1e1e; /* Gris oscuro */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Separación más clara entre bloques */
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
 }
