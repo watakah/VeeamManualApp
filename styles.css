@@ -8,8 +8,8 @@
 /* Estilo general del cuerpo */
 body {
   font-family: "Roboto", Arial, sans-serif;
-  background-color: #121212; /* Fondo oscuro */
-  color: #e0e0e0; /* Texto claro */
+  background-color: #ffffff; /* Fondo blanco */
+  color: #333333; /* Texto negro */
   line-height: 1.6;
   padding: 20px;
 }
@@ -23,11 +23,11 @@ body {
 
 /* Encabezado */
 header {
-  background-color: #00bfff; /* Azul eléctrico */
-  color: white;
+  background-color: #f8f9fa; /* Gris claro */
+  color: #333333; /* Texto negro */
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  border-bottom: 2px solid #cccccc; /* Línea gris debajo del encabezado */
 }
 
 header h1 {
@@ -38,30 +38,31 @@ header h1 {
 
 header p {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #666666; /* Texto gris medio */
 }
 
 /* Bloques de tareas principales */
 .task-block {
-  background-color: #1e1e1e; /* Gris oscuro */
-  border-radius: 12px; /* Bordes redondeados */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #e0e0e0; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
   margin-bottom: 40px; /* Separación amplia entre bloques */
   padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
 }
 
 .task-block:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
 }
 
 .task-title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #333333; /* Texto negro */
   margin-bottom: 15px;
-  border-bottom: 2px solid #00bfff; /* Línea azul debajo del título */
+  border-bottom: 2px solid #cccccc; /* Línea gris debajo del título */
   padding-bottom: 10px;
 }
 
@@ -88,19 +89,19 @@ header p {
 
 .subtask-description {
   font-size: 1rem;
-  color: #ffffff;
+  color: #333333; /* Texto negro */
 }
 
 .subtask-info {
   font-size: 0.9rem;
-  color: #a0a0a0; /* Gris claro */
+  color: #666666; /* Texto gris medio */
   display: block; /* Asegura que esté debajo */
   margin-top: 5px;
 }
 
 .subtask-completed {
   text-decoration: line-through;
-  color: #6b7280; /* Gris medio */
+  color: #999999; /* Texto gris claro */
 }
 
 /* Pie de página */
@@ -108,8 +109,8 @@ footer {
   margin-top: 40px;
   text-align: center;
   font-size: 0.9rem;
-  color: #6b7280; /* Gris claro */
+  color: #666666; /* Texto gris medio */
   padding: 20px;
-  background-color: #1e1e1e; /* Gris oscuro */
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  background-color: #f8f9fa; /* Gris claro */
+  border-top: 2px solid #cccccc; /* Línea gris arriba del pie */
 }
