@@ -1,98 +1,3 @@
-Entendido. Vamos a revisar y ajustar **todo el proyecto** para que funcione correctamente con **XAMPP**. Esto incluye verificar la estructura del proyecto, las rutas de los archivos, y asegurarnos de que todos los componentes (HTML, CSS, JavaScript) sean compatibles con XAMPP.
-
----
-
-### **1. Estructura del Proyecto**
-
-Asegúrate de que la estructura del proyecto sea la siguiente:
-
-```
-C:\xampp\htdocs\VeeamManualApp/
-├── index.html          # Punto de entrada HTML
-├── app.js              # Código JavaScript para renderizar tareas
-├── styles.css          # Estilos personalizados adicionales
-└── assets/             # Carpeta opcional para imágenes u otros recursos
-```
-
----
-
-### **2. Crear el Archivo `index.html`**
-
-Aquí tienes el archivo `index.html` completo. Este archivo carga Bootstrap desde un CDN, así como los archivos locales `app.js` y `styles.css`.
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manual Veeam 12</title>
-  <!-- Cargar Bootstrap desde CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Header -->
-  <header class="bg-primary text-white text-center py-4">
-    <h1 class="display-5">Manual Completo de Copia a Cintas con Veeam 12</h1>
-    <p class="lead">Guía paso a paso para usuarios con experiencia en NetBackup</p>
-  </header>
-
-  <!-- Main Content -->
-  <main class="container mt-4">
-    <h2 class="mb-4">Lista de Tareas</h2>
-    <ul class="list-group" id="task-list">
-      <!-- Las tareas se generarán dinámicamente con JavaScript -->
-    </ul>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3 mt-5">
-    <p>© 2023 Manual Veeam 12 - Todos los derechos reservados</p>
-  </footer>
-
-  <!-- Cargar Bootstrap JS y Popper.js desde CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script personalizado -->
-  <script src="app.js"></script>
-</body>
-</html>
-```
-
----
-
-### **3. Crear el Archivo `styles.css`**
-
-Este archivo contiene estilos personalizados adicionales para mejorar la apariencia de la aplicación.
-
-```css
-/* Ajustes adicionales para mejorar la apariencia */
-body {
-  font-family: Arial, sans-serif;
-}
-
-.task-item {
-  margin-bottom: 1rem;
-}
-
-.subtask-item {
-  margin-left: 20px;
-}
-
-.subtask-completed {
-  text-decoration: line-through;
-  color: gray;
-}
-```
-
----
-
-### **4. Crear el Archivo `app.js`**
-
-Este archivo contiene todas las tareas y subtareas, así como el código JavaScript necesario para renderizarlas dinámicamente.
-
-```javascript
 // Datos de tareas y subtareas
 const tasks = [
   {
@@ -199,7 +104,247 @@ const tasks = [
       },
     ],
   },
-  // ... (agregar más tareas aquí)
+  {
+    id: 3,
+    title: "Crear Media Pool para rotación anual (60 semanas)",
+    steps: [
+      {
+        id: "3.1",
+        description: "Ve a 'Backup Infrastructure' > 'Tape Infrastructure' > 'Media Pools'.",
+        additionalInfo:
+          "Verifica que las cintas disponibles sean suficientes para cubrir la retención de 60 semanas.",
+        completed: false,
+      },
+      {
+        id: "3.2",
+        description: "Haz clic en 'Add Media Pool' y asigna un nombre (ej., 'Anual_60Semanas').",
+        additionalInfo:
+          "Usa un nombre que refleje claramente la duración de la retención (ej., 'Anual_60Semanas').",
+        completed: false,
+      },
+      {
+        id: "3.3",
+        description: "Configura la política de retención a 60 semanas.",
+        additionalInfo:
+          "Asegúrate de que la política de retención cumpla con los requisitos regulatorios de tu industria.",
+        completed: false,
+      },
+      {
+        id: "3.4",
+        description: "Habilita la opción de etiquetado automático con un prefijo claro (ej., 'Anual_').",
+        additionalInfo:
+          "El etiquetado ayuda a identificar rápidamente las cintas destinadas a respaldos anuales.",
+        completed: false,
+      },
+      {
+        id: "3.5",
+        description: "Asegúrate de habilitar cifrado para cumplir con políticas de seguridad.",
+        additionalInfo:
+          "El cifrado es especialmente importante para respaldos de largo plazo que pueden almacenarse fuera del sitio.",
+        completed: false,
+      },
+      {
+        id: "3.6",
+        description: "Habilita inmutabilidad para proteger los datos contra ransomware.",
+        additionalInfo:
+          "La inmutabilidad garantiza que los datos no puedan ser modificados o eliminados durante el período de retención.",
+        completed: false,
+      },
+      {
+        id: "3.7",
+        description: "Guarda el Media Pool y verifica su creación.",
+        additionalInfo:
+          "Prueba la asociación del Media Pool con un job para validar que los datos se escriban correctamente en las cintas.",
+        completed: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Crear un job de respaldo de máquinas virtuales (VM)",
+    steps: [
+      {
+        id: "4.1",
+        description: "Abre la consola de Veeam Backup & Replication.",
+        additionalInfo:
+          "Asegúrate de tener acceso administrativo a la consola y que las VMs estén correctamente registradas en Veeam.",
+        completed: false,
+      },
+      {
+        id: "4.2",
+        description: "Ve a 'Home' > 'Backup Job' > 'Virtual Machine'.",
+        additionalInfo:
+          "Selecciona el tipo de job adecuado según tu entorno virtual (VMware, Hyper-V, etc.).",
+        completed: false,
+      },
+      {
+        id: "4.3",
+        description: "Asigna un nombre descriptivo al job (ej., 'Backup_VM_Semanal').",
+        additionalInfo:
+          "Usa nombres claros que indiquen la frecuencia y propósito del job.",
+        completed: false,
+      },
+      {
+        id: "4.4",
+        description: "Selecciona las máquinas virtuales que deseas respaldar.",
+        additionalInfo:
+          "Puedes usar filtros o grupos para seleccionar múltiples VMs de manera eficiente.",
+        completed: false,
+      },
+      {
+        id: "4.5",
+        description: "Configura el repositorio de destino para los respaldos.",
+        additionalInfo:
+          "Elige un repositorio optimizado para almacenar grandes volúmenes de datos.",
+        completed: false,
+      },
+      {
+        id: "4.6",
+        description: "Define la política de retención (ej., 4 semanas).",
+        additionalInfo:
+          "Ajusta la retención según los requisitos de cumplimiento de tu organización.",
+        completed: false,
+      },
+      {
+        id: "4.7",
+        description: "Programa el job para ejecutarse automáticamente (ej., diariamente a las 10 PM).",
+        additionalInfo:
+          "Considera programar el job durante horas de baja actividad para minimizar el impacto en el rendimiento.",
+        completed: false,
+      },
+      {
+        id: "4.8",
+        description: "Guarda y prueba el job para asegurarte de que funcione correctamente.",
+        additionalInfo:
+          "Realiza una restauración de prueba para validar que los datos se respaldan correctamente.",
+        completed: false,
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Crear un job de respaldo con agente",
+    steps: [
+      {
+        id: "5.1",
+        description: "Abre la consola de Veeam Backup & Replication.",
+        additionalInfo:
+          "Asegúrate de que los agentes estén instalados y registrados en Veeam.",
+        completed: false,
+      },
+      {
+        id: "5.2",
+        description: "Ve a 'Home' > 'Backup Job' > 'File Level Backup'.",
+        additionalInfo:
+          "Selecciona esta opción si necesitas respaldar archivos específicos en servidores físicos o máquinas sin hipervisor.",
+        completed: false,
+      },
+      {
+        id: "5.3",
+        description: "Asigna un nombre descriptivo al job (ej., 'Backup_Agente_Diario').",
+        additionalInfo:
+          "Usa nombres que reflejen claramente el propósito del job.",
+        completed: false,
+      },
+      {
+        id: "5.4",
+        description: "Selecciona los agentes y las carpetas/archivos que deseas respaldar.",
+        additionalInfo:
+          "Puedes usar filtros para excluir archivos temporales o innecesarios.",
+        completed: false,
+      },
+      {
+        id: "5.5",
+        description: "Configura el repositorio de destino para los respaldos.",
+        additionalInfo:
+          "Elige un repositorio con suficiente espacio para almacenar los datos.",
+        completed: false,
+      },
+      {
+        id: "5.6",
+        description: "Define la política de retención (ej., 1 mes).",
+        additionalInfo:
+          "Ajusta la retención según los requisitos de tu organización.",
+        completed: false,
+      },
+      {
+        id: "5.7",
+        description: "Programa el job para ejecutarse automáticamente (ej., semanalmente).",
+        additionalInfo:
+          "Considera programar el job durante horas de baja actividad para minimizar el impacto en el rendimiento.",
+        completed: false,
+      },
+      {
+        id: "5.8",
+        description: "Guarda y prueba el job para asegurarte de que funcione correctamente.",
+        additionalInfo:
+          "Realiza una restauración de prueba para validar que los datos se respaldan correctamente.",
+        completed: false,
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Duplicar una cinta",
+    steps: [
+      {
+        id: "6.1",
+        description: "Abre la consola de Veeam Backup & Replication.",
+        additionalInfo:
+          "Asegúrate de tener acceso a las bibliotecas de cintas configuradas.",
+        completed: false,
+      },
+      {
+        id: "6.2",
+        description: "Ve a 'Home' > 'Tape Job' > 'Tape to Tape'.",
+        additionalInfo:
+          "Este tipo de job permite copiar datos entre cintas para fines de replicación o almacenamiento adicional.",
+        completed: false,
+      },
+      {
+        id: "6.3",
+        description: "Asigna un nombre descriptivo al job (ej., 'Duplicar_Cinta_Mensual').",
+        additionalInfo:
+          "Usa nombres que indiquen claramente el propósito del job.",
+        completed: false,
+      },
+      {
+        id: "6.4",
+        description: "Selecciona la cinta fuente que deseas duplicar.",
+        additionalInfo:
+          "Verifica que la cinta fuente contenga los datos que necesitas copiar.",
+        completed: false,
+      },
+      {
+        id: "6.5",
+        description: "Selecciona la cinta de destino para la duplicación.",
+        additionalInfo:
+          "Asegúrate de que la cinta de destino tenga suficiente espacio disponible.",
+        completed: false,
+      },
+      {
+        id: "6.6",
+        description: "Configura opciones avanzadas como cifrado y compresión.",
+        additionalInfo:
+          "El cifrado es útil para proteger los datos en caso de pérdida de la cinta.",
+        completed: false,
+      },
+      {
+        id: "6.7",
+        description: "Programa el job para ejecutarse automáticamente (ej., mensualmente).",
+        additionalInfo:
+          "Considera programar el job durante horas de baja actividad para evitar interrupciones.",
+        completed: false,
+      },
+      {
+        id: "6.8",
+        description: "Guarda y prueba el job para asegurarte de que funcione correctamente.",
+        additionalInfo:
+          "Verifica que los datos se hayan copiado correctamente a la cinta de destino.",
+        completed: false,
+      },
+    ],
+  },
 ];
 
 // Función para renderizar las tareas
@@ -275,66 +420,3 @@ function renderTasks() {
 
 // Renderizar las tareas al cargar la página
 document.addEventListener("DOMContentLoaded", renderTasks);
-```
-
----
-
-### **5. Verificar la Configuración de XAMPP**
-
-#### **A. Ubicación de los Archivos**
-Coloca los archivos (`index.html`, `app.js`, `styles.css`) en la carpeta `VeeamManualApp` dentro de `htdocs`:
-
-```
-C:\xampp\htdocs\VeeamManualApp/
-```
-
-#### **B. Reiniciar Apache**
-1. Abre el **Panel de Control de XAMPP**.
-2. Detén y vuelve a iniciar Apache.
-
-#### **C. Acceder al Proyecto**
-Abre tu navegador y ve a:
-```
-http://localhost/VeeamManualApp/
-```
-
----
-
-### **6. Resolver Problemas Comunes**
-
-#### **Problema 1: No Se Muestra Nada**
-- **Causa**: El archivo `app.js` no se carga correctamente.
-- **Solución**:
-  - Verifica que el archivo `app.js` esté en la misma carpeta que `index.html`.
-  - Asegúrate de que la ruta en `<script src="app.js"></script>` sea correcta.
-
-#### **Problema 2: Las Tareas No Se Renderizan**
-- **Causa**: Error en el código JavaScript.
-- **Solución**:
-  - Abre la **Consola del Navegador** (`F12`) y revisa los errores.
-  - Asegúrate de que el archivo `app.js` no tenga errores de sintaxis.
-
-#### **Problema 3: El Servidor No Responde**
-- **Causa**: Apache no está iniciado o hay conflictos de puerto.
-- **Solución**:
-  - Verifica que Apache esté iniciado en el **Panel de Control de XAMPP**.
-  - Si hay conflictos de puerto, cambia el puerto predeterminado (80) en el archivo de configuración de Apache:
-    - Ve a `C:\xampp\apache\conf\httpd.conf`.
-    - Busca `Listen 80` y cámbialo a otro puerto (ej., `Listen 8080`).
-    - Reinicia Apache y accede a:
-      ```
-      http://localhost:8080/VeeamManualApp/
-      ```
-
----
-
-### **7. Prueba Final**
-Si todo está configurado correctamente:
-1. Ejecuta Apache desde el Panel de Control de XAMPP.
-2. Accede a `http://localhost/VeeamManualApp/` en tu navegador.
-3. Deberías ver la aplicación funcionando correctamente con todas las tareas y subtareas.
-
----
-
-### **Resumen**
-Con esta configuración, tienes una aplicación completamente funcional utilizando **Bootstrap**, **JavaScript** y **XAMPP**. ¡Intenta nuevamente y dime si ves algún otro problema! 😊
