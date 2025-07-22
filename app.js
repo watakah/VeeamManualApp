@@ -198,81 +198,6 @@ const tasks = [
       },
     ],
   },
-  {
-    id: 6,
-    title: "Mejores Prácticas y Optimización",
-    steps: [
-      {
-        id: "6.1",
-        description: "Automatización.",
-        additionalInfo:
-          "Usa cintas con códigos de barras y activa escaneo automático.",
-        completed: false,
-      },
-      {
-        id: "6.2",
-        description: "Optimizar rendimiento.",
-        additionalInfo:
-          "Usa un servidor físico, habilita parallel processing, y asegura baja latencia.",
-        completed: false,
-      },
-      {
-        id: "6.3",
-        description: "Seguridad.",
-        additionalInfo:
-          "Habilita cifrado y almacena cintas fuera del sitio.",
-        completed: false,
-      },
-      {
-        id: "6.4",
-        description: "Pruebas.",
-        additionalInfo:
-          "Realiza restauraciones de prueba y simulaciones de recuperación.",
-        completed: false,
-      },
-      {
-        id: "6.5",
-        description: "Notificaciones.",
-        additionalInfo:
-          "Configura alertas en General Options > Notifications.",
-        completed: false,
-      },
-    ],
-  },
-  {
-    id: 7,
-    title: "Solución de Problemas",
-    steps: [
-      {
-        id: "7.1",
-        description: "Resolver problemas de 'No media available'.",
-        additionalInfo:
-          "Verifica el Free Media Pool y añade cintas con códigos de barras.",
-        completed: false,
-      },
-      {
-        id: "7.2",
-        description: "Resolver problemas de cintas no detectadas.",
-        additionalInfo:
-          "Usa controladores OEM o ejecuta un Inventory manual.",
-        completed: false,
-      },
-      {
-        id: "7.3",
-        description: "Resolver problemas de rendimiento lento.",
-        additionalInfo:
-          "Verifica la conexión y habilita parallel processing.",
-        completed: false,
-      },
-      {
-        id: "7.4",
-        description: "Resolver errores de asignación.",
-        additionalInfo:
-          "Confirma que Add media automatically esté activado.",
-        completed: false,
-      },
-    ],
-  },
 ];
 
 // Función para renderizar las tareas
@@ -283,35 +208,22 @@ function renderTasks() {
   taskList.innerHTML = "";
 
   tasks.forEach((task) => {
-    // Crear el elemento de tarea
-    const taskItem = document.createElement("li");
-    taskItem.className = "list-group-item";
+    // Crear el bloque de tarea principal
+    const taskBlock = document.createElement("div");
+    taskBlock.className = "task-block"; // Clase para el bloque de tarea
 
-    // Encabezado de la tarea
-    const taskHeader = document.createElement("div");
-    taskHeader.className = "d-flex justify-content-between align-items-center mb-2";
-
-    const taskTitle = document.createElement("h5");
+    // Título de la tarea principal
+    const taskTitle = document.createElement("h3");
+    taskTitle.className = "task-title";
     taskTitle.textContent = task.title;
-
-    const taskStatus = document.createElement("span");
-    taskStatus.className = `badge ${
-      task.steps.every((step) => step.completed) ? "bg-success" : "bg-secondary"
-    }`;
-    taskStatus.textContent = task.steps.every((step) => step.completed)
-      ? "Completada"
-      : "Pendiente";
-
-    taskHeader.appendChild(taskTitle);
-    taskHeader.appendChild(taskStatus);
 
     // Lista de subtareas
     const subtaskList = document.createElement("ul");
-    subtaskList.className = "list-unstyled";
+    subtaskList.className = "subtask-list";
 
     task.steps.forEach((step) => {
       const subtaskItem = document.createElement("li");
-      subtaskItem.className = "subtask-item d-flex flex-column"; // Usamos flex-column para apilar elementos
+      subtaskItem.className = "subtask-item d-flex flex-column";
 
       const checkboxContainer = document.createElement("div");
       checkboxContainer.className = "d-flex align-items-center";
@@ -333,21 +245,21 @@ function renderTasks() {
 
       // Información adicional (abajo de la descripción)
       const info = document.createElement("small");
-      info.className = "text-muted ms-4 mt-1 d-block"; // Agregamos margen superior y bloque para separar
+      info.className = "text-muted ms-4 mt-1 d-block";
       info.textContent = step.additionalInfo;
 
       // Agregar elementos al contenedor de subtarea
       subtaskItem.appendChild(checkboxContainer);
-      subtaskItem.appendChild(info); // Agregamos el texto adicional debajo
+      subtaskItem.appendChild(info);
       subtaskList.appendChild(subtaskItem);
     });
 
-    // Agregar elementos al contenedor de tarea
-    taskItem.appendChild(taskHeader);
-    taskItem.appendChild(subtaskList);
+    // Agregar elementos al bloque de tarea
+    taskBlock.appendChild(taskTitle);
+    taskBlock.appendChild(subtaskList);
 
-    // Agregar tarea al DOM
-    taskList.appendChild(taskItem);
+    // Agregar bloque de tarea al DOM
+    taskList.appendChild(taskBlock);
   });
 }
 
