@@ -41,60 +41,31 @@ header p {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Contenido principal */
-main {
-  margin-top: 20px;
-}
-
-/* Lista de tareas */
-.task-list {
-  list-style: none;
-}
-
-.task-item {
+/* Bloques de tareas principales */
+.task-block {
   background-color: #1e1e1e; /* Gris oscuro */
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  margin-bottom: 30px; /* Separación más clara entre bloques */
-  padding: 20px;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  margin-bottom: 40px; /* Separación amplia entre bloques */
+  padding: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
 }
 
-.task-item:hover {
+.task-block:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-}
-
-.task-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
 
 .task-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #ffffff;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #00bfff; /* Línea azul debajo del título */
+  padding-bottom: 10px;
 }
 
-.task-status {
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
-
-.task-status-completed {
-  background-color: #22c55e; /* Verde */
-  color: white;
-}
-
-.task-status-pending {
-  background-color: #e5e7eb; /* Gris claro */
-  color: #6b7280; /* Gris oscuro */
-}
-
-/* Subtareas */
+/* Lista de subtareas */
 .subtask-list {
   list-style: none;
   padding-left: 20px;
