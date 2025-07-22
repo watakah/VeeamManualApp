@@ -1,0 +1,17 @@
+/* Ajustes adicionales para mejorar la apariencia */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.task-item {
+  margin-bottom: 1rem;
+}
+
+.subtask-item {
+  margin-left: 20px;
+}
+
+.subtask-completed {
+  text-decoration: line-through;
+  color: gray;
+}
