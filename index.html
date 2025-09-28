@@ -1,40 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manual Veeam 12</title>
-  <!-- Cargar Bootstrap desde CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap @5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tottenkorps - Old School Black Metal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header -->
-  <header class="bg-primary text-white text-center py-4">
-    <h1 class="display-5">Manual Copia a Cintas con Veeam 12</h1>
-    <p class="lead">Guía paso a paso </p>
-  </header>
 
-  <!-- Contenedor Principal -->
-  <div class="container">
-    <!-- Main Content -->
-    <main class="mt-4">
-      <h2 class="mb-4">Lista de Tareas</h2>
-      <ul class="list-group" id="task-list">
-        <!-- Las tareas se generarán dinámicamente con JavaScript -->
-      </ul>
+    <header id="hero">
+        <div class="hero-content">
+            <img src="https://via.placeholder.com/150x150/000000/FFFFFF?text=Logo" alt="Logo Tottenkorps" class="logo">
+            <h1 class="band-name">TOTTENKORPS</h1>
+            <p class="subtitle">Old School Black Metal Inmortal</p>
+            <a href="#music" class="cta-button">ESCÚCHALOS AHORA</a>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>SOMOS TOTTENKORPS</h2>
+                <div class="about-content">
+                    <img src="https://via.placeholder.com/400x400/333333/FFFFFF?text=Band+Photo" alt="Foto de la banda Tottenkorps" class="band-photo">
+                    <p>Desde las profundidades, Tottenkorps emerge como un bastión del auténtico Old School Black Metal. Con riffs devastadores, atmósferas opresivas y letras que desafían lo convencional, nuestra música es un viaje inquebrantable a los rincones más oscuros del espíritu. No hay concesiones. Solo pura furia.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="music">
+            <div class="container">
+                <h2>DESATA EL SONIDO</h2>
+                <div class="album-highlight">
+                    <img src="https://via.placeholder.com/400x400/111111/FFFFFF?text=Album+Art" alt="Portada del álbum Muerte Eterna" class="album-art">
+                    <div class="album-info">
+                        <h3>Último Lanzamiento: Muerte Eterna</h3>
+                        <p>La culminación de años de oscuridad. Un ritual sonoro que te consumirá por completo. Disponible ahora en todas las plataformas.</p>
+                        <div class="streaming-links">
+                            <a href="#" class="streaming-button">Spotify</a>
+                            <a href="#" class="streaming-button">Bandcamp</a>
+                            <a href="#" class="streaming-button">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="tour">
+            <div class="container">
+                <h2>PRÓXIMOS RITOS</h2>
+                <ul class="tour-dates">
+                    <li>
+                        <span class="date">31 OCT</span>
+                        <span class="location">SANTIAGO, CHILE - Bar Óxido</span>
+                        <a href="#" class="details-button">Ver Detalles</a>
+                    </li>
+                    <li>
+                        <span class="date">15 NOV</span>
+                        <span class="location">VALPARAÍSO, CHILE - El Huevo</span>
+                        <a href="#" class="details-button">Ver Detalles</a>
+                    </li>
+                    <li>
+                        <span class="date">05 DIC</span>
+                        <span class="location">CONCEPCIÓN, CHILE - La Bodeguita de Nicanor</span>
+                        <a href="#" class="details-button">Ver Detalles</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>LA LEGIÓN HA HABLADO</h2>
+                <div class="quotes">
+                    <blockquote>
+                        <p>"Pura brutalidad. Tottenkorps son los guardianes del verdadero Black Metal. ¡Imperdibles!"</p>
+                        <cite>- Crítica Underzine</cite>
+                    </blockquote>
+                    <blockquote>
+                        <p>"Cada riff es una puñalada. Me voló la cabeza en vivo. La energía es indescriptible."</p>
+                        <cite>- Fan en Concierto</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
     </main>
-  </div>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3 mt-5">
-    <p>Gestión Automática de Cintas en Veeam 12 </p>
-  </footer>
+    <footer>
+        <div class="container">
+            <h2>CONÉCTATE CON LA OSCURIDAD</h2>
+            <p>Sigue nuestros pasos y no te pierdas ningún anuncio.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/tottenkorps" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Bandcamp</a>
+            </div>
+            <p class="copyright">&copy; 2025 Tottenkorps. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-  <!-- Cargar Bootstrap JS y Popper.js desde CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap @5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script personalizado -->
-  <script src="app.js"></script>
 </body>
 </html>
