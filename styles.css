@@ -1,116 +1,273 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* --- VARIABLES Y ESTILOS GLOBALES --- */
+:root {
+    --color-black: #000000;
+    --color-dark-grey: #1a1a1a;
+    --color-mid-grey: #333333;
+    --color-light-grey: #cccccc;
+    --color-white: #ffffff;
 }
 
-/* Estilo general del cuerpo */
-body {
-  font-family: "Roboto", Arial, sans-serif;
-  background-color: #ffffff; /* Fondo blanco */
-  color: #333333; /* Texto negro */
-  line-height: 1.6;
-  padding: 20px;
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    line-height: 1.6;
 }
 
-/* Contenedor principal centrado */
 .container {
-  max-width: 80%; /* 80% del ancho de la página */
-  margin: 0 auto; /* Centrado horizontal */
-  padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
 }
 
-/* Encabezado */
-header {
-  background-color: #f8f9fa; /* Gris claro */
-  color: #333333; /* Texto negro */
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid #cccccc; /* Línea gris debajo del encabezado */
+h1, h2, h3 {
+    margin-top: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+h1.band-name {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 5rem;
+    color: var(--color-white);
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
 }
 
-header p {
-  font-size: 1rem;
-  color: #666666; /* Texto gris medio */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-mid-grey);
+    display: inline-block;
+    padding-bottom: 0.5rem;
 }
 
-/* Bloques de tareas principales */
-.task-block {
-  background-color: #ffffff; /* Fondo blanco */
-  border: 1px solid #e0e0e0; /* Borde gris claro */
-  border-radius: 8px; /* Bordes redondeados */
-  margin-bottom: 40px; /* Separación amplia entre bloques */
-  padding: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
+p {
+    font-size: 1.1rem;
+    color: var(--color-light-grey);
 }
 
-.task-block:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+a {
+    color: var(--color-white);
+    text-decoration: none;
 }
 
-.task-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333333; /* Texto negro */
-  margin-bottom: 15px;
-  border-bottom: 2px solid #cccccc; /* Línea gris debajo del título */
-  padding-bottom: 10px;
+img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%) contrast(110%);
 }
 
-/* Lista de subtareas */
-.subtask-list {
-  list-style: none;
-  padding-left: 20px;
+
+/* --- HERO SECTION --- */
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-white);
+    /* CAMBIA 'hero-background.jpg' POR LA URL DE TU IMAGEN DE FONDO */
+    background: url('https://via.placeholder.com/1920x1080/111111/FFFFFF?text=Live+Band+Photo') no-repeat center center/cover;
 }
 
-.subtask-item {
-  margin-bottom: 10px;
+#hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
-.subtask-item input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2); /* Checkbox más grande */
-  transition: all 0.3s ease;
+#hero .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.subtask-item input[type="checkbox"]:hover {
-  cursor: pointer;
-  transform: scale(1.3); /* Efecto hover */
+#hero .logo {
+    width: 120px;
+    margin-bottom: 1.5rem;
 }
 
-.subtask-description {
-  font-size: 1rem;
-  color: #333333; /* Texto negro */
+#hero .subtitle {
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem 0;
+    font-weight: 700;
 }
 
-.subtask-info {
-  font-size: 0.9rem;
-  color: #666666; /* Texto gris medio */
-  display: block; /* Asegura que esté debajo */
-  margin-top: 5px;
+.cta-button {
+    background: transparent;
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
 }
 
-.subtask-completed {
-  text-decoration: line-through;
-  color: #999999; /* Texto gris claro */
+.cta-button:hover {
+    background: var(--color-white);
+    color: var(--color-black);
 }
 
-/* Pie de página */
+/* --- ABOUT SECTION --- */
+#about {
+    background-color: var(--color-dark-grey);
+}
+
+#about .about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: left;
+}
+
+#about .band-photo {
+    flex-basis: 40%;
+    border: 2px solid var(--color-mid-grey);
+}
+
+#about p {
+    flex-basis: 60%;
+}
+
+
+/* --- MUSIC SECTION --- */
+#music {
+    background-color: var(--color-black);
+}
+
+#music .album-highlight {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    text-align: left;
+}
+
+#music .album-art {
+    flex-basis: 40%;
+}
+
+#music .album-info {
+    flex-basis: 60%;
+}
+
+.streaming-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.streaming-button {
+    border: 1px solid var(--color-mid-grey);
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.streaming-button:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+}
+
+/* --- TOUR SECTION --- */
+#tour {
+    background-color: var(--color-dark-grey);
+}
+.tour-dates {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.tour-dates li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid var(--color-mid-grey);
+}
+.tour-dates .date {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.details-button {
+    border: 1px solid var(--color-light-grey);
+    padding: 0.5rem 1rem;
+}
+.details-button:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+/* --- TESTIMONIALS SECTION --- */
+#testimonials blockquote {
+    border: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+#testimonials blockquote p {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+#testimonials blockquote cite {
+    font-style: normal;
+    color: var(--color-light-grey);
+}
+
+/* --- FOOTER --- */
 footer {
-  margin-top: 40px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666666; /* Texto gris medio */
-  padding: 20px;
-  background-color: #f8f9fa; /* Gris claro */
-  border-top: 2px solid #cccccc; /* Línea gris arriba del pie */
+    background-color: var(--color-dark-grey);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+.social-links {
+    margin: 2rem 0;
+}
+.social-links a {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.social-links a:hover {
+    border-bottom: 1px solid var(--color-white);
+}
+.copyright {
+    font-size: 0.9rem;
+    color: var(--color-mid-grey);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    h1.band-name {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .container {
+        padding: 3rem 1rem;
+    }
+    #about .about-content, #music .album-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+    .tour-dates li {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
