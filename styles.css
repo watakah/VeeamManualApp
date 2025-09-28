@@ -95,7 +95,7 @@ img {
 }
 
 #hero .logo {
-    width: 120px;
+    width: 720px;
     margin-bottom: 1.5rem;
 }
 
@@ -271,3 +271,4 @@ footer {
         gap: 1rem;
     }
 }
+
