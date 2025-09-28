@@ -30,7 +30,7 @@ h1, h2, h3 {
 }
 
 h1.band-name {
-    font-family: 'UnifrakturMaguntia', cursive;
+    font-family: 'Courier';
     font-size: 5rem;
     color: var(--color-white);
     letter-spacing: 2px;
@@ -271,4 +271,5 @@ footer {
         gap: 1rem;
     }
 }
+
 
